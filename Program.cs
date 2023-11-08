@@ -13,13 +13,7 @@ namespace HelloWorld
     internal class Program{
         static void Main(string[] args)
         {
-            IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .Build();
-            DataContextDapper dapper = new DataContextDapper(config);
-
-            DateTime rightNow = dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
-            Console.WriteLine(rightNow);
+            
             
             Computer myComputer = new Computer()
             {
@@ -48,29 +42,11 @@ namespace HelloWorld
                 + "','" + myComputer.VideoCard
              +"')";
 
-            bool result = dapper.ExecuteSql(sql);
-            Console.WriteLine(result);
+            //overwrite but for a log file we don't want overwrite
+            File.WriteAllText("log.txt",sql);
+            
 
-            string sqlSelect = @"SELECT 
-                Computer.ComputerId,
-                Computer.Motherboard,
-                Computer.CPUCores,
-                Computer.HasWifi,
-                Computer.HasLTE,
-                Computer.ReleaseDate,
-                Computer.Price,
-                Computer.VideoCard
-                FROM TutorialAppSchema.Computer";
-
-            //IEnumerable most efficent datastucture
-            IEnumerable<Computer> computers = dapper.LoadData<Computer>(sqlSelect);
-           
-
-            foreach(Computer c in computers)
-            {
-                Console.WriteLine(c.ComputerId);
-                Console.WriteLine(c.ReleaseDate);
-            }
+          
         }
     }
 }
