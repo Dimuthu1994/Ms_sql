@@ -22,19 +22,20 @@ namespace HelloWorld
                 HasWifi = true,
                 HasLTE = false,
                 ReleaseDate = DateTime.Now,
-                Price = 100.89m,
-                VideoCard = "RTX 2060"
+                Price = 100.89m
 
             };
 
             string sql = @"INSERT INTO TutorialAppSchema.Computer (
                 Motherboard,
+                CPUCores,
                 HasWifi,
                 HasLTE,
                 ReleaseDate,
                 Price,
                 VideoCard
             ) VALUES ('" +myComputer.Motherboard
+                + "','" + myComputer.CPUCores
                 + "','" + myComputer.HasWifi
                 + "','" + myComputer.HasLTE
                 + "','" + myComputer.ReleaseDate
@@ -48,6 +49,7 @@ namespace HelloWorld
             string sqlSelect = @"SELECT 
                 Computer.ComputerId,
                 Computer.Motherboard,
+                Computer.CPUCores,
                 Computer.HasWifi,
                 Computer.HasLTE,
                 Computer.ReleaseDate,
