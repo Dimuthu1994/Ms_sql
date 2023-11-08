@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Text.Json;
 using Dapper;
 using HelloWorld.Data;
 using HelloWorld.Models;
@@ -13,48 +14,39 @@ namespace HelloWorld
     internal class Program{
         static void Main(string[] args)
         {
+            IConfiguration config = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json")
+                    .Build();
             
-            
-            Computer myComputer = new Computer()
+            DataContextDapper dapper = new DataContextDapper(config);
+            // string sql = @"INSERT INTO TutorialAppSchema.Computer (
+            //     Motherboard,
+            //     CPUCores,
+            //     HasWifi,
+            //     HasLTE,
+            //     ReleaseDate,
+            //     Price,
+            //     VideoCard
+            // ) VALUES ('" +myComputer.Motherboard
+            //     + "','" + myComputer.CPUCores
+            //     + "','" + myComputer.HasWifi
+            //     + "','" + myComputer.HasLTE
+            //     + "','" + myComputer.ReleaseDate
+            //     + "','" + myComputer.Price
+            //     + "','" + myComputer.VideoCard
+            //  +"')\n";
+
+            string computersJson = File.ReadAllText("Computers.json");
+            //Console.WriteLine(computersJson);
+
+            IEnumerable<Computer>? computers = JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson);
+            if(computers != null)
             {
-                Motherboard = "z690",
-                HasWifi = true,
-                HasLTE = false,
-                ReleaseDate = DateTime.Now,
-                Price = 100.89m
-
-            };
-
-            string sql = @"INSERT INTO TutorialAppSchema.Computer (
-                Motherboard,
-                CPUCores,
-                HasWifi,
-                HasLTE,
-                ReleaseDate,
-                Price,
-                VideoCard
-            ) VALUES ('" +myComputer.Motherboard
-                + "','" + myComputer.CPUCores
-                + "','" + myComputer.HasWifi
-                + "','" + myComputer.HasLTE
-                + "','" + myComputer.ReleaseDate
-                + "','" + myComputer.Price
-                + "','" + myComputer.VideoCard
-             +"')\n";
-
-            //overwrite but for a log file we don't want overwrite
-            //File.WriteAllText("log.txt","\n"+sql+"\n");
-            
-
-            //now append same text at the end
-            using StreamWriter openFile = new("log.txt",append:true);
-            openFile.WriteLine("\n"+sql+"\n");
-            openFile.Close();
-
-            Console.WriteLine(File.ReadAllText("log.txt"));
-
-            string fileText = File.ReadAllText("log.txt");
-          
+                foreach(Computer computer in computers)
+                {
+                    Console.WriteLine(computer.Motherboard);
+                }
+            }
         }
     }
 }
