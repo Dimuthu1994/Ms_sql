@@ -43,12 +43,17 @@ namespace HelloWorld
              +"')\n";
 
             //overwrite but for a log file we don't want overwrite
-            //File.WriteAllText("log.txt",sql);
+            //File.WriteAllText("log.txt","\n"+sql+"\n");
             
 
             //now append same text at the end
             using StreamWriter openFile = new("log.txt",append:true);
-            openFile.WriteLine(sql);
+            openFile.WriteLine("\n"+sql+"\n");
+            openFile.Close();
+
+            Console.WriteLine(File.ReadAllText("log.txt"));
+
+            string fileText = File.ReadAllText("log.txt");
           
         }
     }
