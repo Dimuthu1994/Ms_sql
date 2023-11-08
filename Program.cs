@@ -38,8 +38,12 @@ namespace HelloWorld
 
             string computersJson = File.ReadAllText("Computers.json");
             //Console.WriteLine(computersJson);
+            JsonSerializerOptions options = new JsonSerializerOptions()
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
 
-            IEnumerable<Computer>? computers = JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson);
+            IEnumerable<Computer>? computers = JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson,options);
             if(computers != null)
             {
                 foreach(Computer computer in computers)
