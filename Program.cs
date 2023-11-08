@@ -27,6 +27,25 @@ namespace HelloWorld
                 VideoCard = "RTX 2060"
 
             };
+
+            string sql = @"INSERT INTO TutorialAppSchema.Computer (
+                Motherboard,
+                HasWifi,
+                HasLTE,
+                ReleaseDate,
+                Price,
+                VideoCard
+            ) VALUES ('" +myComputer.Motherboard
+                + "','" + myComputer.HasWifi
+                + "','" + myComputer.HasLTE
+                + "','" + myComputer.ReleaseDate
+                + "','" + myComputer.Price
+                + "','" + myComputer.VideoCard
+             +"')";
+
+            //return value is number of rows results
+            int result = dbConnection.Execute(sql);
+            Console.WriteLine(result);
         }
     }
 }
