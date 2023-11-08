@@ -46,6 +46,25 @@ namespace HelloWorld
             //return value is number of rows results
             int result = dbConnection.Execute(sql);
             Console.WriteLine(result);
+
+            string sqlSelect = @"SELECT 
+                Computer.Motherboard,
+                Computer.HasWifi,
+                Computer.HasLTE,
+                Computer.ReleaseDate,
+                Computer.Price,
+                Computer.VideoCard
+                FROM TutorialAppSchema.Computer";
+
+            //IEnumerable most efficent datastucture
+            IEnumerable<Computer> computers = dbConnection.Query<Computer>(sqlSelect);
+            //List<Computer> computersa = dbConnection.Query<Computer>(sqlSelect).ToList();
+
+            foreach(Computer c in computers)
+            {
+                Console.WriteLine(c.Motherboard);
+                Console.WriteLine(c.ReleaseDate);
+            }
         }
     }
 }
