@@ -62,3 +62,10 @@ D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\runtimes\win\lib\
 D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Dotnet\udemy\dotnet-course-code\HelloWorld\obj\Debug\net7.0\HelloWorld.csproj.CopyComplete
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Dotnet\udemy\dotnet-course-code\HelloWorld\bin\Debug\net7.0\appsettings.json
