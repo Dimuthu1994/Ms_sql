@@ -46,6 +46,7 @@ namespace HelloWorld
             Console.WriteLine(result);
 
             string sqlSelect = @"SELECT 
+                Computer.ComputerId,
                 Computer.Motherboard,
                 Computer.HasWifi,
                 Computer.HasLTE,
@@ -60,7 +61,7 @@ namespace HelloWorld
 
             foreach(Computer c in computers)
             {
-                Console.WriteLine(c.Motherboard);
+                Console.WriteLine(c.ComputerId);
                 Console.WriteLine(c.ReleaseDate);
             }
         }
