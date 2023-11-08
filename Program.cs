@@ -40,12 +40,15 @@ namespace HelloWorld
                 + "','" + myComputer.ReleaseDate
                 + "','" + myComputer.Price
                 + "','" + myComputer.VideoCard
-             +"')";
+             +"')\n";
 
             //overwrite but for a log file we don't want overwrite
-            File.WriteAllText("log.txt",sql);
+            //File.WriteAllText("log.txt",sql);
             
 
+            //now append same text at the end
+            using StreamWriter openFile = new("log.txt",append:true);
+            openFile.WriteLine(sql);
           
         }
     }
