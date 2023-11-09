@@ -45,13 +45,13 @@ namespace HelloWorld
                     ReleaseDate,
                     Price,
                     VideoCard
-                    ) VALUES ('" +computer.Motherboard
+                    ) VALUES ('" +EscapeSingleQuote(computer.Motherboard)
                     + "','" + computer.CPUCores
                     + "','" + computer.HasWifi
                     + "','" + computer.HasLTE
                     + "','" + computer.ReleaseDate
                     + "','" + computer.Price
-                    + "','" + computer.VideoCard
+                    + "','" + EscapeSingleQuote(computer.VideoCard)
                 +"')\n";
                 dapper.ExecuteSql(sql);
                 }
@@ -63,6 +63,12 @@ namespace HelloWorld
             string computersCopyS = System.Text.Json.JsonSerializer.Serialize(computers);
             File.WriteAllText("computersCopySystem.txt",computersCopyS);
 
+        }
+        //SELECT * FROM TutorialAppSchema.Computer WHERE VideoCard = 'Robel-O''Hara';
+        static string EscapeSingleQuote(string input){
+            string output = input.Replace("'","''");
+
+            return output;
         }
     }
 }
