@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fuzHlEbvfL5FnVdR6xk3zPTWJOZlaqbw3tO9q6In/pqgOT/xvbciG+WGZBP8BI8Gg8gjbz2JIevgBGYBPLhEmg==",
+  "dgSpecHash": "HYW/lWj1I+kZI4UoToudESyiZ5EsrAa1aoPrGEuaZ3JcV+6c6Ja90dl9SN+cGx3XMTgo7MekvYT5DLB8gazhIw==",
   "success": true,
-  "projectFilePath": "D:\\Dotnet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj",
+  "projectFilePath": "D:\\DotNet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ddimuthu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\ddimuthu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

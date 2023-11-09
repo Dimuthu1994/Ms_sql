@@ -20,22 +20,7 @@ namespace HelloWorld
                     .Build();
             
             DataContextDapper dapper = new DataContextDapper(config);
-            // string sql = @"INSERT INTO TutorialAppSchema.Computer (
-            //     Motherboard,
-            //     CPUCores,
-            //     HasWifi,
-            //     HasLTE,
-            //     ReleaseDate,
-            //     Price,
-            //     VideoCard
-            // ) VALUES ('" +myComputer.Motherboard
-            //     + "','" + myComputer.CPUCores
-            //     + "','" + myComputer.HasWifi
-            //     + "','" + myComputer.HasLTE
-            //     + "','" + myComputer.ReleaseDate
-            //     + "','" + myComputer.Price
-            //     + "','" + myComputer.VideoCard
-            //  +"')\n";
+          
 
             string computersJson = File.ReadAllText("Computers.json");
             // //Console.WriteLine(computersJson);
@@ -51,9 +36,33 @@ namespace HelloWorld
             {
                 foreach(Computer computer in computers)
                 {
-                    Console.WriteLine(computer.Motherboard);
+                   // Console.WriteLine(computer.Motherboard);
+                     string sql = @"INSERT INTO TutorialAppSchema.Computer (
+                    Motherboard,
+                    CPUCores,
+                    HasWifi,
+                    HasLTE,
+                    ReleaseDate,
+                    Price,
+                    VideoCard
+                    ) VALUES ('" +computer.Motherboard
+                    + "','" + computer.CPUCores
+                    + "','" + computer.HasWifi
+                    + "','" + computer.HasLTE
+                    + "','" + computer.ReleaseDate
+                    + "','" + computer.Price
+                    + "','" + computer.VideoCard
+                +"')\n";
+                dapper.ExecuteSql(sql);
                 }
             }
+
+            string computersCopyN = JsonConvert.SerializeObject(computers);
+            File.WriteAllText("computersCopyNewtonsoft.txt",computersCopyN);
+
+            string computersCopyS = System.Text.Json.JsonSerializer.Serialize(computers);
+            File.WriteAllText("computersCopySystem.txt",computersCopyS);
+
         }
     }
 }

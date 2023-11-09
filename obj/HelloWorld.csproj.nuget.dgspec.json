@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dotnet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj": {}
+    "D:\\DotNet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj": {}
   },
   "projects": {
-    "D:\\Dotnet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj": {
+    "D:\\DotNet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj",
+        "projectUniqueName": "D:\\DotNet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj",
         "projectName": "HelloWorld",
-        "projectPath": "D:\\Dotnet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj",
+        "projectPath": "D:\\DotNet\\udemy\\dotnet-course-code\\HelloWorld\\HelloWorld.csproj",
         "packagesPath": "C:\\Users\\ddimuthu\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet\\udemy\\dotnet-course-code\\HelloWorld\\obj\\",
+        "outputPath": "D:\\DotNet\\udemy\\dotnet-course-code\\HelloWorld\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ddimuthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
